@@ -33,7 +33,7 @@ class LayerInterface{
         Eigen::MatrixXd outputMatrix(gradIn.rows(), gradient.front().cols());
         for (int i =0; i < gradIn.rows(); i++){
             // TODO some dot produce
-            outputMatrix.row(i) = gradIn.row(i).transpose() * gradient.at(i));
+            outputMatrix.row(i) = gradIn.row(i).transpose() * gradient.at(i);
         }
         return gradIn;
     }

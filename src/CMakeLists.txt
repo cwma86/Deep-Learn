@@ -1,5 +1,5 @@
 
-set(HEADER_FILES LayerInterface.h)
+set(HEADER_FILES LayerInterface.h LinearLayer.h)
 find_package(Eigen3 REQUIRED)
 link_directories(${Eigen_INCLUDE_DIRS})
 
