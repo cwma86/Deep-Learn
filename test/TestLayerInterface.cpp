@@ -2,10 +2,27 @@
 #include <LayerInterface.h>
 #include <eigen3/Eigen/Dense>
 
+//! LayerInterface test class
+/*!
+  A class made for testing the LayerInterface, by providing dummy implementation
+  for the pure virutual class metods
+*/
+class TestLayer: public LayerInterface{
+    virtual Eigen::MatrixXd  forward(Eigen::MatrixXd dataIn) override {
+        // No Implementation needed for test
+        return dataIn;
+    } ;
+    virtual std::vector<Eigen::MatrixXd> gradient() override {
+        // No Implementation needed for test.
+        std::vector<Eigen::MatrixXd> fakeOutput;
+        return fakeOutput;
+    } ;
+};
+
 // Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions)
+TEST(LayerInterfaceTest, BasicAssertions)
 {
-    LayerInterface testInterface;
+    TestLayer testInterface;
     int rows = 3;
     int cols = 3;
     Eigen::MatrixXd testMatrix(rows, cols); // 3 by 3 double precision matrix initialization
